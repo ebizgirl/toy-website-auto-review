@@ -12,13 +12,16 @@ param environmentType string
 @maxLength(13)
 param resourceNameSuffix string = uniqueString(resourceGroup().id)
 
+
+
 // Define the names for resources.
 var appServiceAppName = 'toy-website-${resourceNameSuffix}'
 var appServicePlanName = 'toy-website'
 var storageAccountName = 'mystorage${resourceNameSuffix}'
 
-var appServiceAppLinuxFrameworkVersion = 'node|14-lts'
+var appServiceAppLinuxFrameworkVersion = 'DOCKER|dockersamples/static-site:latest'
 
+//test
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
   Production: {
