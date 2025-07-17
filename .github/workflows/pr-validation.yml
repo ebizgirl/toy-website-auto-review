@@ -41,7 +41,7 @@ jobs:
         id: deploy
         uses: azure/arm-deploy@v1
         with:
-          scope: resourceGroup
+          scope: resourcegroup
           failOnStdErr: false
           deploymentName: pr-${{ github.run_number }}
           resourceGroupName: ${{ env.resourceGroupName }}
@@ -51,5 +51,5 @@ jobs:
               
       - name: Show website hostname
         run: |
-          echo "Access the website at this address: https://${{ steps.deploy.outputs.outputs.appServiceAppHostName }}"
+          echo "Access the website at this address: https://${{ steps.deploy.outputs.appServiceAppHostName }}"
 
